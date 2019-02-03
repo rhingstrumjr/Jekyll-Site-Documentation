@@ -1,10 +1,10 @@
 @import 'normalize';
 @import 'main';
 
-$mf-color: #c60000;
+$mf-color: #222;
 $hv-color: #ffa000;
-$mbg-color: #e7e8e8;
-$altbg-color: #525252;
+$mbg-color: #D7FFCA;
+$altbg-color: #333333;
 
 body {
   background-color: $mbg-color;
@@ -22,13 +22,23 @@ header {
 
 nav {
   font-size: 18px;
-  overflow: hidden;
 }
 
 
 a {
-  color: $mf-color;
+  color: #02e000;
   text-decoration: none;
+}
+
+main header {
+  background-color: $mbg-color;
+  color: black;
+
+}
+
+section {
+  border-top: solid #00000030 1px;
+  padding: 0.8em;
 }
 /* Style the links inside the navigation bar */
 .nav-link {
@@ -36,6 +46,10 @@ a {
   text-align: center;
   padding: 8px 1px;
   text-decoration: none;
+  color:  black;
+  background-color: #D7FFCA;
+  border-bottom: black 1px solid;
+  border-right: black 1px solid;
 }
 
 
@@ -73,6 +87,11 @@ nav.responsive .nav-link {
   padding-right: 15px;
 }
 
+@media only screen and (max-width: 500px) {
+  #nav-title {
+    font-size: 22px;
+  }
+}
 /* For desktop */
 @media only screen and (min-width: 750px)  {
   /* Hide the link that should open and close the topnav on small screens */
@@ -80,18 +99,17 @@ nav.responsive .nav-link {
     display: none;
   }
 
-  body {
-    display: flex;
-  }
-
   nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 35vw;
     height: 100vh;
-    float: left;
   }
 
   main {
-    flex-basis: 100%;
+    position: absolute;
+    margin-left: 35vw;
   }
 
   .nav-link {

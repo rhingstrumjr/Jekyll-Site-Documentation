@@ -21,34 +21,68 @@
 
   <!-- Add your site or application content here -->
   <nav class="topnav" id='navbar'>
-    <header><a href="#main-doc">Jekyll Site Documentation</a><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></header>
-    <a class='nav-link' href="#">Topic 1</a>
-    <a class='nav-link' href="#">Topic 2</a>
-    <a class='nav-link' href="#">Topic 3</a>
-    <a class='nav-link' href="#">Topic 4</a>
+    <header><a id="nav-title" href="#main-doc">Jekyll Site Documentation</a><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></header>
+    <a class='nav-link' href="#Jekyll_-_What_is_it">Jekyll - What is it?</a>
+    <a class='nav-link' href="#Setting_up_Jekyll">Setting up Jekyll</a>
+    <a class='nav-link' href="#The_Power_of_Jekyll">The Power of Jekyll</a>
+    <a class='nav-link' href="#Creating_template_pages">Creating template pages</a>
     <a class='nav-link' href="#">Topic 5</a>
     <a class='nav-link' href="#">Topic 6</a>
   </nav>
   <main id='main-doc'>
-    <section class='main-section' id='UPDATEwITHhEADERnAME'>
+    <section class='main-section' id='Jekyll_-_What_is_it'>
       <header>
-        Topic 1
+        Jekyll - What is it?
       </header>
-      <p>Info about the topic</p>
+      <p>Jekyll transforms your plain text into static websites and blogs.  Jekyll removes the need of setting up databases.  It allows the user to use reusable templates, such as a blog template, and write content in markdown.  This means making site changes can happen in one place instead of potentially hundreds!</p>
     </section>
-    <section class='main-section' id='UPDATEwITHhEADERnAME'>
+    <section class='main-section' id='Setting_up_Jekyll'>
       <header>
-        Topic 2
+        Setting up Jekyll
       </header>
-      <p>Info about the topic</p>
-    </section><section class='main-section' id='UPDATEwITHhEADERnAME'>
+      <p>This section will walk you through how to get a basic Jekyll site running.</p>
+      <ol>
+        <li>Install Ruby</li>
+        <li>In your terminal, run <code>gem install jekyll bundler</code></li>
+        <li>Create a directory for your site.  In the terminal, use <code>mkdir YOUR-SITE</code></li>
+        <li>Create an index.html file with the basics.</li>
+        <li>In your terminal, run <code>jekyll serve</code></li>
+        <li>Go to <a href="http://localhost:4000" target="_blank">http://localhost:4000</a></li>
+      </ol>
+      <p>The basic site has been created!</p>
+    </section><section class='main-section' id='The_Power_of_Jekyll'>
       <header>
-        Topic 3
+        The Power of Jekyll
       </header>
-      <p>Info about the topic</p>
-    </section><section class='main-section' id='UPDATEwITHhEADERnAME'>
+      <p>Jekyll allows the user to create reusable template pages.  That means you don't have to repeatedly copy and paste code to create different pages for your site!</p>
+      <p>Let's get a broad overview of how Jekyll works.  We'll be looking at how three parts work together.</p>
+      <ul>
+        <li>Layouts</li>
+        <li>Includes</li>
+        <li>Variables</li>
+      </ul>
+      <p>Take a look at the following code:</p>
+      <pre class="highlight">
+        <code>&lt;!doctype html&gt;
+          &lt;html&gt;
+            &lt;head&gt;
+              &lt;meta charset="utf-8"&gt;
+              &lt;title&gt;
+                <span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+              &lt;/title&gt;
+            &lt;/head&gt;
+
+            &lt;body&gt;
+              <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">navigation</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span>
+              <span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+            &lt;/body&gt;
+          &lt;/html&gt;
+        </code></pre>
+      <p>This entire thing is called a layout.  Layouts can be reused.  What makes it reusable?</p>
+      <p>Notice the curly braces.  That is called liquid which allows Jekyll to insert things at those locations.  The <code>page.title</code> is an example of a variable set from this page.  The <code>include navigation.html</code> takes a separate html file and inserts it on this page.  In this case, it takes the code for the navigation menu and puts it on this page.</p>
+    </section><section class='main-section' id='Creating_template_pages'>
       <header>
-        Topic 4
+        Creating template pages
       </header>
       <p>Info about the topic</p>
     </section><section class='main-section' id='UPDATEwITHhEADERnAME'>
