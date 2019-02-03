@@ -579,8 +579,18 @@ nav.responsive .nav-link {
   .icon {
     display: none; }
 
+  body {
+    display: flex; }
+
+  nav {
+    width: 35vw;
+    height: 100vh;
+    float: left; }
+
+  main {
+    flex-basis: 100%; }
+
   .nav-link {
-    float: left;
     display: block; } }
 
 /*# sourceMappingURL=styles.css.map */
