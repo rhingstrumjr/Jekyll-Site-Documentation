@@ -26,7 +26,7 @@
     <a class='nav-link' href="#Setting_up_Jekyll">Setting up Jekyll</a>
     <a class='nav-link' href="#The_Power_of_Jekyll">The Power of Jekyll</a>
     <a class='nav-link' href="#Creating_template_pages">Creating template pages</a>
-    <a class='nav-link' href="#">Topic 5</a>
+    <a class='nav-link' href="#Creating_includes">Creating includes</a>
     <a class='nav-link' href="#">Topic 6</a>
   </nav>
   <main id='main-doc'>
@@ -140,11 +140,22 @@
       </ul>
       <p>The one part that could be automated is the post-title.  You wouldn't want that to be the post title for every blog post.</p>
     </section>
-    <section class='main-section' id='UPDATEwITHhEADERnAME'>
+    <section class='main-section' id='Creating_includes'>
       <header>
-        Topic 5
+        Creating includes
       </header>
-      <p>Info about the topic</p>
+      <p>The following information explains includes.  It is taken from the <a href="https://jekyllrb.com/tutorials/convert-site-to-jekyll/">convert a site to Jekyll documentation</a>.</p>
+      <p>Let&rsquo;s suppose your&nbsp;<code class="highlighter-rouge">default.html</code>&nbsp;file is massive and hard to work with. You can break up your layout by putting some of the HTML code in&nbsp;<em>include</em>&nbsp;files.</p>
+      <p>Add a folder called&nbsp;<code class="highlighter-rouge">_includes</code>&nbsp;in your root directory. In that folder, add a file there called&nbsp;<code class="highlighter-rouge">sidebar.html</code>.</p>
+      <p>Remove your sidebar code from your&nbsp;<code class="highlighter-rouge">default.html</code>&nbsp;layout and insert it into the&nbsp;<code class="highlighter-rouge">sidebar.html</code>&nbsp;file.</p>
+      <p>Where the sidebar code previously existed in&nbsp;<code class="highlighter-rouge">default.html</code>, pull in your &ldquo;include&rdquo; like this:</p>
+      <div class="language-liquid highlighter-rouge">
+      <div class="highlight">
+      <pre class="highlight"><code><span class="p">{%</span> <span class="nt">include</span> <span class="na">sidebar</span><span class="p">.</span><span class="na">html</span> <span class="p">%}</span>
+      </code></pre>
+      </div>
+      </div>
+      <p>You can break up other elements of your theme like this, such as your header or footer. Then you can apply these common elements to other layout files. This way you won&rsquo;t have duplicate code.</p>
     </section><section class='main-section' id='UPDATEwITHhEADERnAME'>
       <header>
         Topic 6
