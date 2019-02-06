@@ -89,21 +89,23 @@
       </ul>
       <p>Take a look at the following code:</p>
       <pre class="highlight">
-        <code>&lt;!doctype html&gt;
-          &lt;html&gt;
-            &lt;head&gt;
-              &lt;meta charset="utf-8"&gt;
-              &lt;title&gt;
-                <span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
-              &lt;/title&gt;
-            &lt;/head&gt;
 
-            &lt;body&gt;
-              <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">navigation</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span>
-              <span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
-            &lt;/body&gt;
-          &lt;/html&gt;
-        </code></pre>
+  <code>&lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;
+          <span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>
+        &lt;/title&gt;
+      &lt;/head&gt;
+
+      &lt;body&gt;
+        <span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">navigation</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span>
+        <span class="p">{{</span><span class="w"> </span><span class="nv">content</span><span class="w"> </span><span class="p">}}</span>
+      &lt;/body&gt;
+    &lt;/html&gt;
+  </code>
+      </pre>
       <p>This entire thing is called a layout.  Layouts can be reused.  What makes it reusable?</p>
       <p>Notice the curly braces.  That is called liquid which allows Jekyll to insert things at those locations.  The <code>page.title</code> is an example of a variable set from this page.  The <code>include navigation.html</code> takes a separate html file and inserts it on this page.  In this case, it takes the code for the navigation menu and puts it on this page.</p>
     </section>
@@ -112,48 +114,49 @@
         Creating layout pages
       </header>
       <p>Layout pages are reusable templates.  You can have pages be built based off these layout pages.  Here are some examples taken from <a href="https://jeremenichelli.io/2015/07/building-blog-jekyll-creating-layouts/">jeremenichelli.io</a>.</p>
-      <pre class="highlight">
-        <code>
-          <span class="cp">&lt;!DOCTYPE html&gt;</span>
-          <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+    <pre class="highlight">
+<code>
+  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 
-            {% include head.html %}
+    {% include head.html %}
 
-            {% include header.html %}
+    {% include header.html %}
 
-            <span class="nt">&lt;body&gt;</span>
-              <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"page-wrapper"</span><span class="nt">&gt;</span>
-                {{content}}
-              <span class="nt">&lt;/section&gt;</span>
-            <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"page-wrapper"</span><span class="nt">&gt;</span>
+        {{content}}
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
 
-            {% include footer.html %}
-          <span class="nt">&lt;/html&gt;</span>
-        </code>
-      </pre>
+    {% include footer.html %}
+  <span class="nt">&lt;/html&gt;</span>
+</code>
+    </pre>
       <p>In the above code, you can see the liquid again.  Notice how the layout has <code>{% include ... %}</code>.  This brings in smaller files of html.  This helps keep your code cleaner!  Now, check out another example.</p>
       <pre class="highlight">
-        <code>
-          <span class="cp">&lt;!DOCTYPE html&gt;</span>
-          <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<code>
+  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 
-            {% include head.html %}
+    {% include head.html %}
 
-            {% include header.html %}
+    {% include header.html %}
 
-            <span class="nt">&lt;body&gt;</span>
-              <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"post-wrapper"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"post-date"</span><span class="nt">&gt;</span>{{ page.date }}<span class="nt">&lt;/p&gt;</span>
-              <span class="nt">&lt;/section&gt;</span>
-              <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>Building a blog using Jekyll. Creating custom<span class="ni">&amp;nbsp;</span>layouts<span class="nt">&lt;/h1&gt;</span>
-              <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post-content"</span><span class="nt">&gt;</span>
-                {{content}}
-              <span class="nt">&lt;/article&gt;</span>
-            <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"post-wrapper"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"post-date"</span><span class="nt">&gt;</span>{{ page.date }}<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;
+          </span>Building a blog using Jekyll. Creating custom<span class="ni">&amp;nbsp;</span>layouts<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post-content"</span><span class="nt">&gt;</span>
+        {{content}}
+      <span class="nt">&lt;/article&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
 
-            {% include footer.html %}
-          <span class="nt">&lt;/html&gt;</span>
-        </code>
+    {% include footer.html %}
+  <span class="nt">&lt;/html&gt;</span>
+</code>
       </pre>
       <p>The above layout is for making blog posts.  Notice how it automatically places the following pieces in the page:</p>
       <ul>
@@ -203,16 +206,16 @@
       <div class="language-yaml highlighter-rouge">
         <div class="highlight">
           <pre class="highlight">
-            <code>
-              <span class="pi">-</span><span class="na">name</span><span class="pi">:</span><span class="s">Eric Mill</span>
-              <span class="na">github</span><span class="pi">:</span> <span class="s">konklone</span>
+  <code>
+    <span class="pi">-</span><span class="na">name</span><span class="pi">:</span><span class="s">Eric Mill</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">konklone</span>
 
-              <span class="pi">-</span><span class="na">name</span><span class="pi">:</span><span class="s">Parker Moore</span>
-              <span class="na">github</span><span class="pi">:</span><span class="s">parkr</span>
+    <span class="pi">-</span><span class="na">name</span><span class="pi">:</span><span class="s">Parker Moore</span>
+    <span class="na">github</span><span class="pi">:</span><span class="s">parkr</span>
 
-              <span class="pi">-</span><span class="na">name</span><span class="pi">:</span> <span class="s">Liu Fengyun</span>
-              <span class="na">github</span><span class="pi">:</span> <span class="s">liufengyun</span>
-            </code>
+    <span class="pi">-</span><span class="na">name</span><span class="pi">:</span> <span class="s">Liu Fengyun</span>
+    <span class="na">github</span><span class="pi">:</span> <span class="s">liufengyun</span>
+  </code>
           </pre>
         </div>
       </div>
@@ -222,12 +225,12 @@
       <div class="language-text highlighter-rouge">
         <div class="highlight">
           <pre class="highlight">
-            <code>
-            name,github
-            Eric Mill,konklone
-            Parker Moore,parkr
-            Liu Fengyun,liufengyun
-            </code>
+  <code>
+  name,github
+  Eric Mill,konklone
+  Parker Moore,parkr
+  Liu Fengyun,liufengyun
+  </code>
           </pre>
         </div>
       </div>
@@ -240,16 +243,16 @@
       <div class="language-liquid highlighter-rouge">
         <div class="highlight">
           <pre class="highlight">
-            <code>
-              &lt;ul&gt;<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>member<span class="w"> </span>in<span class="w"> </span>site.data.members<span class="w"> </span><span class="p">%}</span>
-                  &lt;li&gt;
-                      &lt;a href="https://github.com/<span class="p">{{</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="nv">github</span><span class="w"> </span><span class="p">}}</span>"&gt;
-                          <span class="p">{{</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>
-                      &lt;/a&gt;
-                  &lt;/li&gt;
-                <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
-              &lt;/ul&gt;
-            </code>
+  <code>
+    &lt;ul&gt;<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>member<span class="w"> </span>in<span class="w"> </span>site.data.members<span class="w"> </span><span class="p">%}</span>
+        &lt;li&gt;
+            &lt;a href="https://github.com/<span class="p">{{</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="nv">github</span><span class="w"> </span><span class="p">}}</span>"&gt;
+                <span class="p">{{</span><span class="w"> </span><span class="nv">member</span><span class="p">.</span><span class="nv">name</span><span class="w"> </span><span class="p">}}</span>
+            &lt;/a&gt;
+        &lt;/li&gt;
+      <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+    &lt;/ul&gt;
+  </code>
           </pre>
         </div>
       </div>

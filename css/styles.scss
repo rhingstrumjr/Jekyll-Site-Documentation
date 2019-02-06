@@ -9,6 +9,7 @@ $altbg-color: #333333;
 body {
   background-color: $mbg-color;
   color: $mf-color;
+  font-family: Arial, sans-serif;
 }
 
 
@@ -52,6 +53,15 @@ section {
   background-color: $altbg-color;
   // border-bottom: black 1px solid;
   // border-right: black 1px solid;
+}
+
+main a {
+  color: $hv-color;
+}
+
+main a:hover {
+  background-color: $altbg-color;
+  color: #02e000;
 }
 
 
@@ -98,6 +108,7 @@ code {
 
 pre {
   background-color: $altbg-color;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 500px) {
@@ -125,6 +136,7 @@ pre {
   main {
     position: absolute;
     margin-left: 35vw;
+    width: 65%;
   }
 
   .nav-link {

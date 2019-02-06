@@ -522,7 +522,8 @@ textarea {
     page-break-after: avoid; } }
 body {
   background-color: #D7FFCA;
-  color: #222; }
+  color: #222;
+  font-family: Arial, sans-serif; }
 
 header {
   background-color: #333333;
@@ -553,6 +554,13 @@ section {
   text-decoration: none;
   color: #02e000;
   background-color: #333333; }
+
+main a {
+  color: #ffa000; }
+
+main a:hover {
+  background-color: #333333;
+  color: #02e000; }
 
 .nav-link:hover {
   color: #ffa000;
@@ -588,7 +596,8 @@ code {
   background-color: #333333; }
 
 pre {
-  background-color: #333333; }
+  background-color: #333333;
+  overflow: auto; }
 
 @media only screen and (max-width: 500px) {
   #nav-title {
@@ -610,7 +619,8 @@ pre {
 
   main {
     position: absolute;
-    margin-left: 35vw; }
+    margin-left: 35vw;
+    width: 65%; }
 
   .nav-link {
     display: block; } }
