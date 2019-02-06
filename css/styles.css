@@ -551,10 +551,8 @@ section {
   text-align: center;
   padding: 8px 1px;
   text-decoration: none;
-  color: black;
-  background-color: #D7FFCA;
-  border-bottom: black 1px solid;
-  border-right: black 1px solid; }
+  color: #02e000;
+  background-color: #333333; }
 
 .nav-link:hover {
   color: #ffa000;
@@ -584,6 +582,14 @@ nav.responsive .nav-link {
   text-align: right;
   padding-right: 15px; }
 
+/* Style code blocks */
+code {
+  color: white;
+  background-color: #333333; }
+
+pre {
+  background-color: #333333; }
+
 @media only screen and (max-width: 500px) {
   #nav-title {
     font-size: 22px; } }
@@ -598,7 +604,9 @@ nav.responsive .nav-link {
     top: 0;
     left: 0;
     width: 35vw;
-    height: 100vh; }
+    height: 100vh;
+    background-color: #333333;
+    z-index: 1; }
 
   main {
     position: absolute;
