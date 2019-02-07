@@ -6,6 +6,7 @@ $hv-color: #ffa000;
 $mbg-color: #D7FFCA;
 $altbg-color: #333333;
 
+
 body {
   background-color: $mbg-color;
   color: $mf-color;
@@ -31,11 +32,13 @@ a {
   text-decoration: none;
 }
 
+
 main header {
   background-color: $mbg-color;
   color: black;
 
 }
+
 
 section {
   border-top: solid #00000030 1px;
@@ -51,13 +54,13 @@ section {
   text-decoration: none;
   color:  #02e000;
   background-color: $altbg-color;
-  // border-bottom: black 1px solid;
-  // border-right: black 1px solid;
 }
+
 
 main a {
   color: $hv-color;
 }
+
 
 main a:hover {
   background-color: $altbg-color;
@@ -79,11 +82,13 @@ main a:hover {
   padding: 0 10px 0 10px;
   text-decoration: none;
   color: $hv-color;
-  background-color: $mbg-color;
+  background-color: $altbg-color;
+  border-left: 2px $mbg-color solid;
 }
 
 nav.responsive {
   position: relative;
+  z-index: 2;
 }
 
 nav.responsive .icon{
@@ -104,6 +109,7 @@ nav.responsive .nav-link {
 code {
   color: white;
   background-color: $altbg-color;
+  padding: 0 2px 0 2px;
 }
 
 pre {
@@ -128,7 +134,7 @@ pre {
     top: 0;
     left: 0;
     width: 35vw;
-    height: 100vh;
+    height: 100%;
     background-color: $altbg-color;
     z-index: 1;
   }
@@ -137,10 +143,10 @@ pre {
     position: absolute;
     margin-left: 35vw;
     width: 65%;
+    top: 0; // Keeps documentation up even if nav opens before changing
   }
 
   .nav-link {
-    // float: left;
     display: block;
   }
 }

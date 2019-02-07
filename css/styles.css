@@ -574,10 +574,12 @@ main a:hover {
   padding: 0 10px 0 10px;
   text-decoration: none;
   color: #ffa000;
-  background-color: #D7FFCA; }
+  background-color: #333333;
+  border-left: 2px #D7FFCA solid; }
 
 nav.responsive {
-  position: relative; }
+  position: relative;
+  z-index: 2; }
 
 nav.responsive .icon {
   position: absolute;
@@ -593,7 +595,8 @@ nav.responsive .nav-link {
 /* Style code blocks */
 code {
   color: white;
-  background-color: #333333; }
+  background-color: #333333;
+  padding: 0 2px 0 2px; }
 
 pre {
   background-color: #333333;
@@ -613,14 +616,15 @@ pre {
     top: 0;
     left: 0;
     width: 35vw;
-    height: 100vh;
+    height: 100%;
     background-color: #333333;
     z-index: 1; }
 
   main {
     position: absolute;
     margin-left: 35vw;
-    width: 65%; }
+    width: 65%;
+    top: 0; }
 
   .nav-link {
     display: block; } }
